@@ -1,15 +1,18 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { GlobalDiv, SingleUsers, UserAddress, UserDetails, UserImage, UserName, Contact, List } from './globalUser.component.styled';
+import { getUserProfile } from '../../store/actions/viewType_action';
+
+import { GlobalDiv, SingleUsers, UserAddress, UserDetails, UserImage, UserName, Contact, List, Icon, RouteBtn } from './globalUser.component.styled';
 
 
-import { SingleUsersData } from '../../data/sampleData';
+import { singleUsersData } from '../../data/sampleData';
 
-// Get FontAwesome
-import { faEnvelope, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+// Get Icons
+import { ReactComponent as FaPhone } from '../../../asset/img/phone-call.svg';
+import { ReactComponent as FaEmail } from '../../../asset/img/mail.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -20,7 +23,7 @@ function GlobalUsersDetails() {
 
     const { showCountry } = useSelector(state => state.showCountry);
     
-    let displayUsers = SingleUsersData(users);
+    let displayUsers = singleUsersData(users);
 
     const dispatch = useDispatch();
 
@@ -33,26 +36,29 @@ function GlobalUsersDetails() {
                         <UserName>{ user.firstName } {" "} { user.lastName }</UserName>
                         <UserAddress>
                             { user.streetNumber }
-                            { " "}
+                            { " " }
                             { user.streetName },
+                            { " " }
                             { user.city },
+                            { " " }
                             { user.state }
+                            { " " }
                             { (showCountry) ? <UserAddress>,{ " " }{user.country}</UserAddress> : null}
                         </UserAddress>
                         <Contact>
                             <List>
-                                <FontAwesomeIcon 
-                                color="var(--main-color"
-                                icon={faEnvelope} />
+                                <Icon><FaEmail /></Icon>
                                 {user.email}
                             </List>
                             <List>
-                                <FontAwesomeIcon 
-                                color="var(--main-color)"
-                                icon={faPhoneVolume}
-                                />
+                                <Icon><FaPhone /></Icon>
                                 {user.phone}
                             </List>
+                            <RouteBtn onClick={() => dispatch(getUserProfile(user))}>
+                                <FontAwesomeIcon
+                                    icon={faArrowRight}
+                                />
+                            </RouteBtn>
                         </Contact>
                     </UserDetails>
                 </SingleUsers>

@@ -20,7 +20,7 @@ export const SearchIcon = styled.span`
     display: block;
     line-height: ${props => props.user ? "3.531rem" : "1rem"};
     pointer-events: none;
-    padding-left: ${props => props.user ? "1.91rem" : "0.921rem"};
+    padding: ${props => props.user ? "0rem 0rem 0rem 1.91rem" : "0.421rem 0.912rem 0.312rem 0.825rem"};
 `;
 
 export const Input = styled.input`
@@ -77,7 +77,20 @@ export const ListForm = styled.form`
 `;
 
 export const Select = styled.select`
-    color: black;
+    background: var(--search);
+    opacity: 0.11;
+    border: 0.025rem solid var(--search);
+    border-radius: 1.625rem;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0.35rem 0.825rem;
+    font-weight: 600;
+    font-size: 0.825rem;
+    color: inherit;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    appearance:none;
 `;
 
 
