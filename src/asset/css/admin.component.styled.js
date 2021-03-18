@@ -3,11 +3,12 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.section`
     background: transparent;
+    position: relative;
     width: 41.2%;
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
-    position: relative;
     margin: auto;
+    left: 3.725rem;
 `;
 
 export const DashboardGreeting = styled.div`
@@ -30,7 +31,8 @@ export const Greeting = styled.h1`
 export const AdminName = styled.span`
     font-weight: 800;
     line-height: 3.251rem;
-    padding-left: 1rem;
+    padding-left: 0.825rem;
+    padding-top: 0.525rem;
     font-size: 1.525rem;
 `;
 
