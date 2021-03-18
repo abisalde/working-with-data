@@ -19,6 +19,7 @@
     --random: #323874;
     --shadow: #00000029;
     --search: #3C3F54;
+    --global-bg: #F7F7FF;
 }
 
 
@@ -32,9 +33,30 @@ body {
     width: 100vw;
     height: 100vh;
     position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row nowrap;
+    overflow: hidden;
 }
 
-input::placeholder {
-    color: var(--text);
-    opacity: 1;
+@media screen and (min-device-width: 320px) and (max-width: 992px) {
+    .container {
+        display: flex;
+        flex: 1 1 auto;
+        flex-flow: column;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .container > section:first-child {
+        width: 100vw;
+        margin: auto;
+        padding: 1.325rem;
+        left: 0rem;
+    }
+    .container > section:last-child {
+        width: 90vw;
+        margin: auto;
+        padding: 1.875rem;
+    }
 }

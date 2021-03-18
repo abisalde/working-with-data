@@ -1,9 +1,14 @@
 import React from 'react';
 import  { Formik } from 'formik';
 
-import { Form, Input, SearchIcon } from './common.component.styled';// get our fontawesome imports
+import { Form, Input, SearchIcon } from './common.component.styled';
+
+// get our fontawesome imports
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
+
 
 function SearchForm() {
     const initialValue = {
@@ -27,7 +32,7 @@ function SearchForm() {
                 <FontAwesomeIcon icon={faSearch}
                 />
             </SearchIcon>
-            <Input
+            <Input user
                 placeholder=' Find a user'
                 type='text'
                 required
