@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.section`
     background: transparent;
     position: relative;
-    width: 41.2%;
+    width: 38.2%;
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
     margin: auto;

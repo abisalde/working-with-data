@@ -44,11 +44,9 @@ function UsersSearchComponents() {
                     // value={formik.values.findInList} 
                 />
             </ListForm>
-            <ListForm>
                 <Select>
                     <option>Country</option>
                 </Select>
-            </ListForm>
             <ShowCountry>
                 <FontAwesomeIcon
                     color="var(--maleuser)"

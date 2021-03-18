@@ -1,18 +1,25 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 // Use FontAwesome for Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faMale, faFemale } from '@fortawesome/free-solid-svg-icons';
+
+//Styled Components
 import { ShowUsers, Text, ButtonRow, Selector, AllUsers, MaleUsers, FemaleUsers } from './selectUser.component.styled';
+
+//Fetch Users from UsersAction
+import { fetchAllUsers, fetchMaleUsers, fetchFemaleUsers } from '../../../store/actions/users_action';
 
 
 function SelectUser() {
+    const dispatch = useDispatch()
     return (
         <ShowUsers>
             <Text>Show Users</Text>
             <ButtonRow>
                 <Selector>
-                    <AllUsers>
+                    <AllUsers onClick={()=> dispatch(fetchAllUsers())}>
                         <FontAwesomeIcon 
                             size="2x"
                             icon={faUsers} />
@@ -20,7 +27,7 @@ function SelectUser() {
                     <Text size>All Users</Text>
                 </Selector>
                 <Selector>
-                    <MaleUsers>
+                    <MaleUsers onClick={()=> dispatch(fetchMaleUsers())}>
                         <FontAwesomeIcon 
                             size="2x"
                             icon={faMale}
@@ -29,7 +36,7 @@ function SelectUser() {
                     <Text size>Male Users</Text>
                 </Selector>
                 <Selector>
-                    <FemaleUsers>
+                    <FemaleUsers onClick={()=> dispatch(fetchFemaleUsers())}>
                         <FontAwesomeIcon 
                             size="2x"
                             icon={faFemale}
