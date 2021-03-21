@@ -1,11 +1,13 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
+// Redux Action
+import { useDispatch, useSelector } from 'react-redux';
 import { getUserProfile } from '../../store/actions/viewType_action';
 
+//Importing styled Components
 import { GlobalDiv, SingleUsers, UserAddress, UserDetails, UserImage, UserName, Contact, List, Icon, RouteBtn } from './globalUser.component.styled';
 
-
+//Getting user Data
 import { singleUsersData } from '../../data/sampleData';
 
 // Get Icons
@@ -42,7 +44,6 @@ function GlobalUsersDetails() {
                             { user.city },
                             { " " }
                             { user.state }
-                            { " " }
                             { (showCountry) ? <UserAddress>,{ " " }{user.country}</UserAddress> : null}
                         </UserAddress>
                         <Contact>
