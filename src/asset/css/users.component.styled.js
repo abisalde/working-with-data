@@ -9,6 +9,6 @@ export const UserDashboard = styled.section`
     border: 1px solid #707070;
     border-radius: 1.25rem;
     color: var(--main-color);
-    max-height: 96%;
+    max-height: auto;
     opacity: 1;
 `;

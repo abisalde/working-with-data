@@ -35,16 +35,16 @@ function GlobalUsersDetails() {
                 <SingleUsers key={i}>
                     <UserImage url={user.userPicture} />
                     <UserDetails>
-                        <UserName>{ user.firstName } {" "} { user.lastName }</UserName>
+                        <UserName>{ user.firstName } { ' ' } { user.lastName }</UserName>
                         <UserAddress>
                             { user.streetNumber }
-                            { " " }
+                            { ' ' }
                             { user.streetName },
-                            { " " }
+                            { ' ' }
                             { user.city },
-                            { " " }
+                            { ' ' }
                             { user.state }
-                            { (showCountry) ? <UserAddress>,{ " " }{user.country}</UserAddress> : null}
+                            { (showCountry) ? <UserAddress>,{ ' ' }{user.country}</UserAddress> : null}
                         </UserAddress>
                         <Contact>
                             <List>
