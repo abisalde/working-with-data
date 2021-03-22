@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,500;0,600;0,800;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-color: #262A41;
+    --text: #FFFFFF;
+    --download: #7946C1;
+    --icons: #BABDD1;
+    --allusers: #F935A9;
+    --maleuser: #30BBB5;
+    --femaleuser: #7946C1;
+    --imgborder: #75D6D1;
+    --routebtnshadow: #30BBB574;
+    --random: #323874;
+    --shadow: #00000029;
+    --search: #3C3F54;
+    --global-bg: #F7F7FF;
+    --btnroute: #30BBB5;
+}
+
+
+body {
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background-color: var(--main-color);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row nowrap;
+    overflow: hidden;
+}
+
+@media screen and (min-device-width: 320px) and (max-width: 992px) {
+    .container {
+        display: flex;
+        flex: 1 1 auto;
+        flex-flow: column;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .container > section:first-child {
+        width: 100vw;
+        margin: auto;
+        padding: 1.325rem;
+        left: 0rem;
+    }
+    .container > section:last-child {
+        width: 90vw;
+        margin: auto;
+        padding: 1.875rem;
+    }
+}
