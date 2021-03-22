@@ -14,7 +14,7 @@ import FilterReducer from './reducers/filter_reducer';
 const reducersRoot = combineReducers({
     userType: UserTypeReducer,
     viewType: ViewReducer,
-    viewMoreDetails: ViewReducer,
+    singleUserDetails: ViewReducer,
     users: UserReducer,
     loading: UserReducer,
     showCountry: FilterReducer,

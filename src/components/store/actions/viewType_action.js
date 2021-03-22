@@ -1,19 +1,19 @@
 
 
-export const view = {
+export const dynamicView = {
     globalView: 'Global',
-    userProfile: 'UserProfile'
+    userProfile: 'UserProfile',
 }
 
 export const getGlobalUser = () => {
     return {
-        type: view.globalView
+        type: dynamicView.globalView
     }
 }
 
 export const getUserProfile = (user) => {
     return {
-        type: view.userProfile,
+        type: dynamicView.userProfile,
         payload: user
     }
 }

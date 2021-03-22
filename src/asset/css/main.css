@@ -21,6 +21,7 @@
     --search: #3C3F54;
     --global-bg: #F7F7FF;
     --btnroute: #30BBB5;
+    --pageshadow: #0000001A;
 }
 
 
@@ -61,3 +62,4 @@ body {
         padding: 1.875rem;
     }
 }
+

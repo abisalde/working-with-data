@@ -105,3 +105,34 @@ export const CountryText = styled.p`
     font-weight: 600;
     padding-left: 0.225rem;
 `;
+
+
+export const BottomDivUser = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    bottom: 0.52rem;
+`;
+
+export const PageDiv = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.45rem;
+`;
+
+export const PageArrow = styled.div`
+    width: 2.21rem;
+    height: 1.95rem;
+    background: #E2E2EA;
+    text-align: center;
+    padding-top: 0.21rem;
+    color: var(--main-color);
+    box-shadow: 0.21rem 0.29rem 0.95rem var(--pageshadow);
+    border-radius: 0.475rem;
+    :active {
+        background: var(--main-color);
+        color: var(--text);
+    }
+`;

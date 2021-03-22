@@ -1,19 +1,19 @@
-import { view } from '../actions/viewType_action';
+import { dynamicView } from '../actions/viewType_action';
 
 const initialState = {
     viewType: 'Global'
 }
 
- const ViewReducer = (state = initialState , action) => {
+const ViewReducer = (state = initialState , action) => {
     switch(action.type){
-        case view.normal : return{
+        case dynamicView.globalView : return{
             ...state, 
-            viewType: view.globalView
+            viewType: dynamicView.globalView
         }
-        case view.expanded : return{
+        case dynamicView.userProfile : return{
             ...state,
-            viewType: view.userProfile,
-            viewMoredetails: action.payload
+            viewType: dynamicView.userProfile,
+            singleUserDetails: action.payload
         }
         default: return state
     }
