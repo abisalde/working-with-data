@@ -91,7 +91,6 @@ function UsersSearchComponents() {
                     onClick={() => {
                         showcountry.current = !showcountry.current
                         dispatch(showCountry(showcountry.current))
-                        console.log('I am Clicked');
                     }}
                 />
                 <CountryText> Show Country</CountryText>
