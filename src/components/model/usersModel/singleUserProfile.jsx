@@ -22,7 +22,6 @@ function SingleUserProfile() {
 
     let { userPicture, userTitle, firstName, lastName, userAge, streetNumber, streetName, city, state, email, dateJoined, phone, cell } = singleUserDetails;
 
-
     return (
         <SingleUser>
             <Results onClick={ () => dispatch(getGlobalUser()) }>

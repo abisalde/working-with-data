@@ -71,7 +71,7 @@ export const singleUsersData = (allData) => {
     if(results) {
         userNewDetails = JSON.stringify(results, null, 2);
         userNewDetails = JSON.parse(userNewDetails);
-        console.log(userNewDetails);
+        // console.log(userNewDetails);
     }
     return (userNewDetails) ? singleUserData(userNewDetails) : singleUserData(userData);
 }

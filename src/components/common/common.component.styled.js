@@ -15,16 +15,18 @@ export const Form = styled.form`
 `;
 
 export const SearchIcon = styled.span`
-    color: var(--text);
+    color: ${props => props.user ? "var(--text)" : "#353839"}
     opacity: 1;
+    background: ${props => props.user ? null : "#DCDCDC"};
+    border-radius: ${props => props.user ? null : "1.625rem 0rem 0rem 1.625rem"};
     display: block;
-    line-height: ${props => props.user ? "3.531rem" : "1rem"};
+    line-height: ${props => props.user ? "3.531rem" : "inherit"};
     pointer-events: none;
-    padding: ${props => props.user ? "0rem 0rem 0rem 1.91rem" : "0.421rem 0.912rem 0.312rem 0.825rem"};
+    padding: ${props => props.user ? "0rem 0rem 0rem 1.91rem" : "0.221rem 0.912rem 0.212rem 0.825rem"};
 `;
 
 export const Input = styled.input`
-    background: transparent;
+    background: ${props => props.user ? "transparent" : "#DCDCDC"};
     opacity: 1;
     font-size: ${props => props.user ? "0.925rem" : "0.8125rem"};
     font-weight: 600;
@@ -32,12 +34,13 @@ export const Input = styled.input`
     padding-left: ${props => props.user ? "2rem" : "0.625rem"};
     letter-spacing: -0.05rem;
     display: block;
+    border-radius: ${props => props.user ? null : "0rem 1.625rem 1.625rem 0rem"};
     width: 100%;
     height: inherit;
     outline: none;
-    color: ${props => props.user ? "var(--text)" : "var(--main-color)"};
+    color: ${props => props.user ? "var(--text)" : "#353839"};
     ::placeholder {
-        color: ${props => props.user ? "var(--text)" : "var(--search)"};
+        color: ${props => props.user ? "var(--text)" : "#353839"};
         opacity: 1;
     }
 `;
@@ -66,9 +69,8 @@ export const FilterBox = styled.div`
 `;
 
 export const ListForm = styled.form`
-    background: var(--search);
-    border: 0.025rem solid var(--search);
-    opacity: 0.11;
+    background: var(--shadow);
+    border: 0.025rem solid var(--shadow);
     border-radius: 1.625rem;
     height: 2rem;
     display: flex;
@@ -77,16 +79,15 @@ export const ListForm = styled.form`
 `;
 
 export const Select = styled.select`
-    background: var(--search);
-    opacity: 0.11;
-    border: 0.025rem solid var(--search);
+    background: #DCDCDC;
+    border: 0.025rem solid #DCDCDC;
     border-radius: 1.625rem;
     outline: none;
     cursor: pointer;
     font-family: inherit;
-    padding: 0.35rem 0.825rem;
+    padding: 0.35rem 0.925rem;
     font-weight: 600;
-    font-size: 0.825rem;
+    font-size: 0.725rem;
     color: inherit;
     -moz-appearance:none;
     -webkit-appearance:none;

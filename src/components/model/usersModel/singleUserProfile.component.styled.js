@@ -79,18 +79,15 @@ export const EmailText = styled.p`
 `;
 
 export const Date = styled.div`
-    line-height: 1rem;
-    background: var(--allusers);
-    opacity: 0.15;
-    border-radius: 1.325rem;
+    background: #FFB3DE;
+    border-radius: 1.525rem;
     margin-top: 1.32rem;
-    width: 12rem;
+    width: 14rem;
+    padding: 1rem;
 `;
 
 export const DateText = styled.p`
-    font-size: 0.56rem;
-    line-height: 2.725rem;
-    opacity: 1;
+    font-size: 0.69rem;
     text-transform: uppercase;
     color: var(--main-color);
 `;
