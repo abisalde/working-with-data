@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const Form = styled.form`
     background: var(--search);
     border: 1px solid var(--search);
@@ -15,32 +14,37 @@ export const Form = styled.form`
 `;
 
 export const SearchIcon = styled.span`
-    color: ${props => props.user ? "var(--text)" : "#353839"}
+    color: ${(props) => (props.user ? 'var(--text)' : '#353839')}
     opacity: 1;
-    background: ${props => props.user ? null : "#DCDCDC"};
-    border-radius: ${props => props.user ? null : "1.625rem 0rem 0rem 1.625rem"};
+    background: ${(props) => (props.user ? null : '#DCDCDC')};
+    border-radius: ${(props) =>
+        props.user ? null : '1.625rem 0rem 0rem 1.625rem'};
     display: block;
-    line-height: ${props => props.user ? "3.531rem" : "inherit"};
+    line-height: ${(props) => (props.user ? '3.531rem' : 'inherit')};
     pointer-events: none;
-    padding: ${props => props.user ? "0rem 0rem 0rem 1.91rem" : "0.221rem 0.912rem 0.212rem 0.825rem"};
+    padding: ${(props) =>
+        props.user
+            ? '0rem 0rem 0rem 1.91rem'
+            : '0.221rem 0.912rem 0.212rem 0.825rem'};
 `;
 
 export const Input = styled.input`
-    background: ${props => props.user ? "transparent" : "#DCDCDC"};
+    background: ${(props) => (props.user ? 'transparent' : '#DCDCDC')};
     opacity: 1;
-    font-size: ${props => props.user ? "0.925rem" : "0.8125rem"};
+    font-size: ${(props) => (props.user ? '0.925rem' : '0.8125rem')};
     font-weight: 600;
     border: none;
-    padding-left: ${props => props.user ? "2rem" : "0.625rem"};
+    padding-left: ${(props) => (props.user ? '2rem' : '0.625rem')};
     letter-spacing: -0.05rem;
     display: block;
-    border-radius: ${props => props.user ? null : "0rem 1.625rem 1.625rem 0rem"};
+    border-radius: ${(props) =>
+        props.user ? null : '0rem 1.625rem 1.625rem 0rem'};
     width: 100%;
     height: inherit;
     outline: none;
-    color: ${props => props.user ? "var(--text)" : "#353839"};
+    color: ${(props) => (props.user ? 'var(--text)' : '#353839')};
     ::placeholder {
-        color: ${props => props.user ? "var(--text)" : "#353839"};
+        color: ${(props) => (props.user ? 'var(--text)' : '#353839')};
         opacity: 1;
     }
 `;
@@ -70,7 +74,6 @@ export const FilterBox = styled.div`
 
 export const ListForm = styled.form`
     background: var(--shadow);
-    border: 0.025rem solid var(--shadow);
     border-radius: 1.625rem;
     height: 2rem;
     display: flex;
@@ -79,8 +82,8 @@ export const ListForm = styled.form`
 `;
 
 export const Select = styled.select`
-    background: #DCDCDC;
-    border: 0.025rem solid #DCDCDC;
+    background: #dcdcdc;
+    border: 0.025rem solid #dcdcdc;
     border-radius: 1.625rem;
     outline: none;
     cursor: pointer;
@@ -89,16 +92,17 @@ export const Select = styled.select`
     font-weight: 600;
     font-size: 0.725rem;
     color: inherit;
-    -moz-appearance:none;
-    -webkit-appearance:none;
-    appearance:none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    display: flex;
 `;
-
 
 export const ShowCountry = styled.div`
     display: flex;
     align-items: center;
     flex-flow: row no-wrap;
+    cursor: pointer;
 `;
 
 export const CountryText = styled.p`
@@ -106,7 +110,6 @@ export const CountryText = styled.p`
     font-weight: 600;
     padding-left: 0.225rem;
 `;
-
 
 export const BottomDivUser = styled.div`
     display: flex;
@@ -126,7 +129,7 @@ export const PageDiv = styled.div`
 export const PageArrow = styled.div`
     width: 2.21rem;
     height: 1.95rem;
-    background: #E2E2EA;
+    background: #e2e2ea;
     text-align: center;
     padding-top: 0.21rem;
     color: var(--main-color);

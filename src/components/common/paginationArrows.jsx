@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 
-function Pagination() {
+function Pagination(props) {
+
     return (
         <PageDiv>
             <PageArrow>
