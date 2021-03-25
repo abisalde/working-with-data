@@ -1,48 +1,43 @@
 import React, { useRef } from 'react';
-import  { Formik } from 'formik';
-import { FilterBox, ListForm, SearchIcon, Input, Select, ShowCountry, CountryText } from './common.component.styled';
+import { Formik } from 'formik';
+import {
+    FilterBox,
+    ListForm,
+    SearchIcon,
+    Input,
+    Select,
+    ShowCountry,
+    CountryText,
+} from './common.component.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { singleUsersData, filterCountry } from '../data/sampleData';
-import { showCountry, filterUsersWithCountry } from '../store/actions/action_filter';
+import { showCountry } from '../store/actions/action_filter';
 
 // Get FontAwesome
-import { faSearch, faToggleOff, faToggleOn } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-
-
+import { faSearch, faSortDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ToggleButton from './toggleButton';
 
 function UsersSearchComponents() {
-    const { users } = useSelector(state => state.users)
+    const { users } = useSelector((state) => state.users);
     const displayUsers = singleUsersData(users);
     let countries = ['country'];
     countries = countries.concat(filterCountry(displayUsers));
 
     const showcountry = useRef(false);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const initialValue = {
         country: '',
         showCountry: true,
-        findInList: "",
+        findInList: '',
     };
-
-    const Toggle = ({switchToggle, onClick}) => {
-        return (
-            <FontAwesomeIcon
-                onClick= {onClick}
-                icon={switchToggle? faToggleOn: faToggleOff}
-                color={switchToggle? "var(--btnroute)" : null}
-                size="2x"
-            />
-        )
-    }
 
     const onSubmit = async (values) => {
         let search = JSON.stringify(values, null, 2);
         search = JSON.parse(search);
-        console.log('Searching User,  ', search.find)
+        console.log('Searching User,  ', search.find);
     };
 
     const formik = Formik({
@@ -50,15 +45,12 @@ function UsersSearchComponents() {
         onSubmit,
     });
 
-
-
     return (
         <FilterBox>
-            <ListForm onSubmit={ formik.handleSubmit }>
+            <ListForm onSubmit={formik.handleSubmit}>
                 <SearchIcon>
-                <FontAwesomeIcon icon={faSearch}
-                />
-            </SearchIcon>
+                    <FontAwesomeIcon icon={faSearch} />
+                </SearchIcon>
                 <Input
                     placeholder=' Find in list'
                     type=' text'
@@ -66,33 +58,34 @@ function UsersSearchComponents() {
                     name='findInList'
                     autoComplete='on'
                     onChange={formik.handleChange}
-                    // value={formik.values.findInList} 
+                    // value={formik.values.findInList}
                 />
             </ListForm>
-                <Select
-                    placeholder='country'
-                    name='country'
-                    onChange={formik.handleChange}
-                    // value={formik.values.findInList}
-                    onBlur={() =>
-                        dispatch(filterUsersWithCountry(formik.values.country))
-                    }
-                >
-                    {
-                        countries.map((value, i) =>(
-                            <option key={i} value={value}>{value}</option>
-                        ))
-                    }
-                </Select>
-            <ShowCountry>
-                <Toggle
-                    onChange={formik.handleChange}
-                    // value={formik.values.showCountry}
-                    onClick={() => {
-                        showcountry.current = !showcountry.current
-                        dispatch(showCountry(showcountry.current))
-                    }}
-                />
+
+            <Select
+                placeholder='country'
+                name='country'
+                onChange={formik.handleChange}
+                // value={formik.values.findInList}
+                // onBlur={() =>
+                //     dispatch(filterUsersWithCountry(formik.values.country))
+                // }
+            >
+                {countries.map((value, i) => (
+                    <option key={i} value={value}>
+                        {value}
+                    </option>
+                ))}
+                <FontAwesomeIcon icon={faSortDown} color='var(--main-color)' />
+            </Select>
+            <ShowCountry
+                onChange={formik.handleChange}
+                onClick={() => {
+                    showcountry.current = !showcountry.current;
+                    dispatch(showCountry(showcountry.current));
+                }}
+            >
+                <ToggleButton />
                 <CountryText> Show Country</CountryText>
             </ShowCountry>
         </FilterBox>
