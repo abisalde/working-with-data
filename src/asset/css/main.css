@@ -7,23 +7,22 @@
 }
 
 :root {
-    --main-color: #262A41;
-    --text: #FFFFFF;
-    --download: #7946C1;
-    --icons: #BABDD1;
-    --allusers: #F935A9;
-    --maleuser: #30BBB5;
-    --femaleuser: #7946C1;
-    --imgborder: #75D6D1;
-    --routebtnshadow: #30BBB574;
+    --main-color: #262a41;
+    --text: #ffffff;
+    --download: #7946c1;
+    --icons: #babdd1;
+    --allusers: #f935a9;
+    --maleuser: #30bbb5;
+    --femaleuser: #7946c1;
+    --imgborder: #75d6d1;
+    --routebtnshadow: #30bbb574;
     --random: #323874;
     --shadow: #00000029;
-    --search: #3C3F54;
-    --global-bg: #F7F7FF;
-    --btnroute: #30BBB5;
-    --pageshadow: #0000001A;
+    --search: #3c3f54;
+    --global-bg: #f7f7ff;
+    --btnroute: #30bbb5;
+    --pageshadow: #0000001a;
 }
-
 
 body {
     color: var(--text);
@@ -36,7 +35,6 @@ body {
     height: 100vh;
     position: relative;
     display: flex;
-    flex: 1 1 auto;
     flex-flow: row nowrap;
     overflow: hidden;
 }
@@ -44,7 +42,6 @@ body {
 @media screen and (min-device-width: 320px) and (max-width: 992px) {
     .container {
         display: flex;
-        flex: 1 1 auto;
         flex-flow: column;
         overflow-x: hidden;
         overflow-y: scroll;
@@ -62,4 +59,3 @@ body {
         padding: 1.875rem;
     }
 }
-
