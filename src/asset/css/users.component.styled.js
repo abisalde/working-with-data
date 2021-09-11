@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const UserDashboard = styled.section`
+    display: flex;
+    flex-flow: column nowrap;
     position: relative;
     width: 48.8%;
     padding: 2.325rem 2.625rem;
