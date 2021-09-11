@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 
-
 export const GlobalDiv = styled.div`
     height: 36.57rem;
     width: 100%;
     overflow: auto;
     margin-top: 2rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 export const SingleUsers = styled.div`
     width: inherit;
-    background: #FCFCFF 0% 0% no-repeat padding-box;
-    box-shadow: 0.625rem 0.625rem 2.5rem #0000000D;
+    background: #fcfcff 0% 0% no-repeat padding-box;
+    box-shadow: 0.625rem 0.625rem 2.5rem #0000000d;
     border-radius: 0.75rem;
     padding: 1.125rem;
     display: grid;
@@ -87,8 +91,7 @@ export const RouteBtn = styled.div`
     opacity: 1;
     color: var(--global-bg);
     text-align: center;
-    padding: 0.50rem;
+    padding: 0.5rem;
     cursor: pointer;
     outline: none;
 `;
-
