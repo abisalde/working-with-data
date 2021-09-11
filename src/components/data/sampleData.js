@@ -48,6 +48,10 @@ const userData = [
     },
 ];
 
+const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+};
 const singleUserData = (dataUser) => {
     let singleUser = dataUser.map((user) => {
         let {
@@ -72,7 +76,7 @@ const singleUserData = (dataUser) => {
         let streetNumber = number;
         let streetName = name;
         let userAge = age;
-        let dateJoined = date;
+        let dateJoined = formatDate(date);
         let userPicture = large;
         return {
             gender,
